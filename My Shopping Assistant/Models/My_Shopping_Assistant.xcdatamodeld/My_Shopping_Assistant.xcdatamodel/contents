@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14490.99" systemVersion="18E226" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Ingerdient" representedClassName="Ingerdient" syncable="YES" codeGenerationType="class">
+        <attribute name="isCombinable" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <attribute name="size" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="ingredientForRecipe" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Recipe" inverseName="ingredients" inverseEntity="Recipe" syncable="YES"/>
+        <relationship name="prices" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Price" inverseName="priceForIngerdientAtStore" inverseEntity="Price" syncable="YES"/>
+    </entity>
+    <entity name="Price" representedClassName="Price" syncable="YES" codeGenerationType="class">
+        <attribute name="costAmount" attributeType="Float" minValueString="0" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="storeName" attributeType="String" syncable="YES"/>
+        <relationship name="priceForIngerdientAtStore" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Ingerdient" inverseName="prices" inverseEntity="Ingerdient" syncable="YES"/>
+    </entity>
+    <entity name="Recipe" representedClassName="Recipe" syncable="YES" codeGenerationType="class">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="ingredients" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Ingerdient" inverseName="ingredientForRecipe" inverseEntity="Ingerdient" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Price" positionX="-2543.02734375" positionY="4584.33984375" width="128" height="88"/>
+        <element name="Ingerdient" positionX="-2763.53125" positionY="4568.63671875" width="128" height="118"/>
+        <element name="Recipe" positionX="-2783.0390625" positionY="4340.1640625" width="128" height="73"/>
+    </elements>
+</model>

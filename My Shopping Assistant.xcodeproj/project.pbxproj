@@ -13,6 +13,7 @@
 		277253B8227CD08A00D565C5 /* My_Shopping_Assistant.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 277253B6227CD08A00D565C5 /* My_Shopping_Assistant.xcdatamodeld */; };
 		277253BA227CD08C00D565C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 277253B9227CD08C00D565C5 /* Assets.xcassets */; };
 		277253BD227CD08C00D565C5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 277253BB227CD08C00D565C5 /* LaunchScreen.storyboard */; };
+		27D0101B227CD7F200440481 /* RecipeListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D0101A227CD7F200440481 /* RecipeListTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		277253B9227CD08C00D565C5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		277253BC227CD08C00D565C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		277253BE227CD08C00D565C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		27D0101A227CD7F200440481 /* RecipeListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,14 +59,39 @@
 			isa = PBXGroup;
 			children = (
 				277253AF227CD08A00D565C5 /* AppDelegate.swift */,
-				277253B1227CD08A00D565C5 /* ViewController.swift */,
-				277253B3227CD08A00D565C5 /* Main.storyboard */,
+				27D01018227CD79C00440481 /* Controllers */,
+				27D01017227CD79200440481 /* Views */,
+				27D01019227CD7AA00440481 /* Models */,
 				277253B9227CD08C00D565C5 /* Assets.xcassets */,
 				277253BB227CD08C00D565C5 /* LaunchScreen.storyboard */,
 				277253BE227CD08C00D565C5 /* Info.plist */,
-				277253B6227CD08A00D565C5 /* My_Shopping_Assistant.xcdatamodeld */,
 			);
 			path = "My Shopping Assistant";
+			sourceTree = "<group>";
+		};
+		27D01017227CD79200440481 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				277253B3227CD08A00D565C5 /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		27D01018227CD79C00440481 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				277253B1227CD08A00D565C5 /* ViewController.swift */,
+				27D0101A227CD7F200440481 /* RecipeListTableViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		27D01019227CD7AA00440481 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				277253B6227CD08A00D565C5 /* My_Shopping_Assistant.xcdatamodeld */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,6 +166,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				277253B2227CD08A00D565C5 /* ViewController.swift in Sources */,
+				27D0101B227CD7F200440481 /* RecipeListTableViewController.swift in Sources */,
 				277253B8227CD08A00D565C5 /* My_Shopping_Assistant.xcdatamodeld in Sources */,
 				277253B0227CD08A00D565C5 /* AppDelegate.swift in Sources */,
 			);
