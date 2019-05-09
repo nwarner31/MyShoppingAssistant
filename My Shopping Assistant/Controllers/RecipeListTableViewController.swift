@@ -46,6 +46,7 @@ class RecipeListTableViewController: UITableViewController {
         if indexPath.row < recipes.count {
             cell.textLabel?.text = recipes[indexPath.row].name
         } else {
+            cell.imageView?.image = UIImage(named: "add-icon")
             cell.textLabel?.text = "Add new recipe"
         }
 
@@ -54,44 +55,59 @@ class RecipeListTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row < recipes.count {
-            
+            performSegue(withIdentifier: "showRecipe", sender: self)
         } else {
+            insertRecipeAlert()
+        }
             
-            let newRecipeAlert = UIAlertController(title: "Add new recipe", message: "Please enter the name of the new recipe", preferredStyle: .alert)
             
-            var newRecipeTextField = UITextField()
-            
-            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (action) in
-                newRecipeAlert.dismiss(animated: true, completion: nil)
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showRecipe" {
+            let recipeVC = segue.destination as! RecipeViewController
+            if let rowSelected = tableView.indexPathForSelectedRow?.row {
+                recipeVC.recipe = recipes[rowSelected]
             }
-            
-            newRecipeAlert.addTextField { (alertTextField) in
-                alertTextField.placeholder = "Recipe name"
-                newRecipeTextField = alertTextField
-            }
-            
-            
-            let insertAction = UIAlertAction(title: "Create Recipe", style: .default) { (action) in
-                if let recipeName = newRecipeTextField.text {
-                    if recipeName != "" {
-                        self.createRecipe(named: recipeName)
-                        newRecipeAlert.dismiss(animated: true, completion: nil)
-                    } else {
-                        let noRecipeNameAlert = UIAlertController(title: "No recipe name entered", message: "To save a recipe please enter a name", preferredStyle: .alert)
-                        let closeNoRecipe = UIAlertAction(title: "OK", style: .destructive, handler: { (action) in
-                            noRecipeNameAlert.dismiss(animated: true, completion: nil)
-                        })
-                        noRecipeNameAlert.addAction(closeNoRecipe)
-                        self.present(noRecipeNameAlert, animated: true, completion: nil)
-                    }
+        }
+    }
+    
+    private func insertRecipeAlert() {
+        let newRecipeAlert = UIAlertController(title: "Add new recipe", message: "Please enter the name of the new recipe", preferredStyle: .alert)
+        
+        var newRecipeTextField = UITextField()
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (action) in
+            newRecipeAlert.dismiss(animated: true, completion: nil)
+        }
+        
+        newRecipeAlert.addTextField { (alertTextField) in
+            alertTextField.placeholder = "Recipe name"
+            newRecipeTextField = alertTextField
+        }
+        
+        
+        let insertAction = UIAlertAction(title: "Create Recipe", style: .default) { (action) in
+            if let recipeName = newRecipeTextField.text {
+                if recipeName != "" {
+                    self.createRecipe(named: recipeName)
+                    newRecipeAlert.dismiss(animated: true, completion: nil)
+                } else {
+                    let noRecipeNameAlert = UIAlertController(title: "No recipe name entered", message: "To save a recipe please enter a name", preferredStyle: .alert)
+                    let closeNoRecipe = UIAlertAction(title: "OK", style: .destructive, handler: { (action) in
+                        noRecipeNameAlert.dismiss(animated: true, completion: nil)
+                    })
+                    noRecipeNameAlert.addAction(closeNoRecipe)
+                    self.present(noRecipeNameAlert, animated: true, completion: nil)
                 }
             }
-            
-            newRecipeAlert.addAction(insertAction)
-            newRecipeAlert.addAction(cancelAction)
-            
-            present(newRecipeAlert, animated: true, completion: nil)
         }
+        
+        newRecipeAlert.addAction(insertAction)
+        newRecipeAlert.addAction(cancelAction)
+        
+        present(newRecipeAlert, animated: true, completion: nil)
         
     }
     
