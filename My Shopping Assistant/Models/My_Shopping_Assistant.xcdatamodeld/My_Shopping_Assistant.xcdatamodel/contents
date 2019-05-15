@@ -4,9 +4,26 @@
         <attribute name="name" attributeType="String" syncable="YES"/>
         <relationship name="ingredientInRecipes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="RecipeIngredient" inverseName="ingredientName" inverseEntity="RecipeIngredient" syncable="YES"/>
     </entity>
+    <entity name="Meal" representedClassName="Meal" syncable="YES" codeGenerationType="class">
+        <relationship name="mainDish" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Recipe" inverseName="recipeForMainDish" inverseEntity="Recipe" syncable="YES"/>
+        <relationship name="mealForBreakfast" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="MealPlan" inverseName="breakfast" inverseEntity="MealPlan" syncable="YES"/>
+        <relationship name="mealForDinner" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="MealPlan" inverseName="dinner" inverseEntity="MealPlan" syncable="YES"/>
+        <relationship name="mealForLunch" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="MealPlan" inverseName="lunch" inverseEntity="MealPlan" syncable="YES"/>
+        <relationship name="sideDish1" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Recipe" inverseName="recipeForSideDish1" inverseEntity="Recipe" syncable="YES"/>
+        <relationship name="sideDish2" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Recipe" inverseName="recipeForSideDish2" inverseEntity="Recipe" syncable="YES"/>
+    </entity>
+    <entity name="MealPlan" representedClassName="MealPlan" syncable="YES" codeGenerationType="class">
+        <attribute name="forDate" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <relationship name="breakfast" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Meal" inverseName="mealForBreakfast" inverseEntity="Meal" syncable="YES"/>
+        <relationship name="dinner" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Meal" inverseName="mealForDinner" inverseEntity="Meal" syncable="YES"/>
+        <relationship name="lunch" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Meal" inverseName="mealForLunch" inverseEntity="Meal" syncable="YES"/>
+    </entity>
     <entity name="Recipe" representedClassName="Recipe" syncable="YES" codeGenerationType="class">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="ingredients" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="RecipeIngredient" inverseName="ingredientForRecipe" inverseEntity="RecipeIngredient" syncable="YES"/>
+        <relationship name="recipeForMainDish" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Meal" inverseName="mainDish" inverseEntity="Meal" syncable="YES"/>
+        <relationship name="recipeForSideDish1" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Meal" inverseName="sideDish1" inverseEntity="Meal" syncable="YES"/>
+        <relationship name="recipeForSideDish2" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Meal" inverseName="sideDish2" inverseEntity="Meal" syncable="YES"/>
     </entity>
     <entity name="RecipeIngredient" representedClassName="RecipeIngredient" syncable="YES" codeGenerationType="class">
         <attribute name="amount" optional="YES" attributeType="Float" minValueString="0" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
@@ -15,8 +32,10 @@
         <relationship name="ingredientName" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Ingredient" inverseName="ingredientInRecipes" inverseEntity="Ingredient" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Ingredient" positionX="-2762.33984375" positionY="4652" width="128" height="73"/>
-        <element name="Recipe" positionX="-2783.0390625" positionY="4340.1640625" width="128" height="73"/>
-        <element name="RecipeIngredient" positionX="-2983.56640625" positionY="4507.53125" width="128" height="103"/>
+        <element name="Ingredient" positionX="-2763.125" positionY="4669.26171875" width="128" height="73"/>
+        <element name="Recipe" positionX="-2994.2265625" positionY="4467.98828125" width="128" height="118"/>
+        <element name="RecipeIngredient" positionX="-2979.42578125" positionY="4640.71484375" width="128" height="103"/>
+        <element name="Meal" positionX="-2734.28125" positionY="4496.859375" width="128" height="133"/>
+        <element name="MealPlan" positionX="-2737.07421875" positionY="4286.0625" width="128" height="103"/>
     </elements>
 </model>

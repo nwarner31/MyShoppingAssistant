@@ -16,8 +16,12 @@
 		279B867D2282719000696F5D /* AddIngredientToRecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279B867C2282719000696F5D /* AddIngredientToRecipeViewController.swift */; };
 		279B86812284BB3A00696F5D /* RecipeIngredientTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279B867F2284BB3A00696F5D /* RecipeIngredientTableViewCell.swift */; };
 		279B86842284DC2D00696F5D /* AddItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279B86832284DC2D00696F5D /* AddItemTableViewCell.swift */; };
+		279B8686228548DB00696F5D /* MenuPlannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279B8685228548DB00696F5D /* MenuPlannerViewController.swift */; };
+		279B868922860E0A00696F5D /* MealPlannerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279B868822860E0A00696F5D /* MealPlannerTableViewController.swift */; };
+		279B868B2287482C00696F5D /* RecipeSelectorTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279B868A2287482C00696F5D /* RecipeSelectorTableViewController.swift */; };
 		27D0101B227CD7F200440481 /* RecipeListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D0101A227CD7F200440481 /* RecipeListTableViewController.swift */; };
 		27D0105F22824D0D00440481 /* RecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D0105E22824D0D00440481 /* RecipeViewController.swift */; };
+		74FEEEA754B37B44B94BC9C7 /* Pods_My_Shopping_Assistant.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDB496BAA2B78F0E8A20999C /* Pods_My_Shopping_Assistant.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,8 +36,15 @@
 		279B867C2282719000696F5D /* AddIngredientToRecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddIngredientToRecipeViewController.swift; sourceTree = "<group>"; };
 		279B867F2284BB3A00696F5D /* RecipeIngredientTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeIngredientTableViewCell.swift; sourceTree = "<group>"; };
 		279B86832284DC2D00696F5D /* AddItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemTableViewCell.swift; sourceTree = "<group>"; };
+		279B8685228548DB00696F5D /* MenuPlannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuPlannerViewController.swift; sourceTree = "<group>"; };
+		279B86872285F05000696F5D /* My Shopping Assistant-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "My Shopping Assistant-Bridging-Header.h"; sourceTree = "<group>"; };
+		279B868822860E0A00696F5D /* MealPlannerTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealPlannerTableViewController.swift; sourceTree = "<group>"; };
+		279B868A2287482C00696F5D /* RecipeSelectorTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeSelectorTableViewController.swift; sourceTree = "<group>"; };
 		27D0101A227CD7F200440481 /* RecipeListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListTableViewController.swift; sourceTree = "<group>"; };
 		27D0105E22824D0D00440481 /* RecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewController.swift; sourceTree = "<group>"; };
+		BDB496BAA2B78F0E8A20999C /* Pods_My_Shopping_Assistant.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_My_Shopping_Assistant.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F930113EE4FA719C06EF2AEA /* Pods-My Shopping Assistant.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-My Shopping Assistant.release.xcconfig"; path = "Target Support Files/Pods-My Shopping Assistant/Pods-My Shopping Assistant.release.xcconfig"; sourceTree = "<group>"; };
+		FE0DFB17CF5ECA4E56633119 /* Pods-My Shopping Assistant.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-My Shopping Assistant.debug.xcconfig"; path = "Target Support Files/Pods-My Shopping Assistant/Pods-My Shopping Assistant.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74FEEEA754B37B44B94BC9C7 /* Pods_My_Shopping_Assistant.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,6 +64,8 @@
 			children = (
 				277253AE227CD08A00D565C5 /* My Shopping Assistant */,
 				277253AD227CD08A00D565C5 /* Products */,
+				2A8BDA3E368775E1596CA095 /* Pods */,
+				5060E3D4D97CA81D732C535E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -73,6 +87,7 @@
 				277253B9227CD08C00D565C5 /* Assets.xcassets */,
 				277253BB227CD08C00D565C5 /* LaunchScreen.storyboard */,
 				277253BE227CD08C00D565C5 /* Info.plist */,
+				279B86872285F05000696F5D /* My Shopping Assistant-Bridging-Header.h */,
 			);
 			path = "My Shopping Assistant";
 			sourceTree = "<group>";
@@ -102,6 +117,9 @@
 				27D0101A227CD7F200440481 /* RecipeListTableViewController.swift */,
 				27D0105E22824D0D00440481 /* RecipeViewController.swift */,
 				279B867C2282719000696F5D /* AddIngredientToRecipeViewController.swift */,
+				279B8685228548DB00696F5D /* MenuPlannerViewController.swift */,
+				279B868822860E0A00696F5D /* MealPlannerTableViewController.swift */,
+				279B868A2287482C00696F5D /* RecipeSelectorTableViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -114,6 +132,23 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		2A8BDA3E368775E1596CA095 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FE0DFB17CF5ECA4E56633119 /* Pods-My Shopping Assistant.debug.xcconfig */,
+				F930113EE4FA719C06EF2AEA /* Pods-My Shopping Assistant.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		5060E3D4D97CA81D732C535E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BDB496BAA2B78F0E8A20999C /* Pods_My_Shopping_Assistant.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -121,9 +156,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 277253C1227CD08C00D565C5 /* Build configuration list for PBXNativeTarget "My Shopping Assistant" */;
 			buildPhases = (
+				5462B7FE119A892448DDD6F7 /* [CP] Check Pods Manifest.lock */,
 				277253A8227CD08A00D565C5 /* Sources */,
 				277253A9227CD08A00D565C5 /* Frameworks */,
 				277253AA227CD08A00D565C5 /* Resources */,
+				092C55C7CAD27E2DF7A45F9F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -180,17 +217,69 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		092C55C7CAD27E2DF7A45F9F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-My Shopping Assistant/Pods-My Shopping Assistant-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/FSCalendar/FSCalendar.framework",
+				"${BUILT_PRODUCTS_DIR}/SwipeCellKit/SwipeCellKit.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FSCalendar.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwipeCellKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-My Shopping Assistant/Pods-My Shopping Assistant-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5462B7FE119A892448DDD6F7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-My Shopping Assistant-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		277253A8227CD08A00D565C5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				279B86842284DC2D00696F5D /* AddItemTableViewCell.swift in Sources */,
+				279B8686228548DB00696F5D /* MenuPlannerViewController.swift in Sources */,
 				277253B2227CD08A00D565C5 /* ViewController.swift in Sources */,
 				27D0101B227CD7F200440481 /* RecipeListTableViewController.swift in Sources */,
 				279B86812284BB3A00696F5D /* RecipeIngredientTableViewCell.swift in Sources */,
+				279B868922860E0A00696F5D /* MealPlannerTableViewController.swift in Sources */,
 				279B867D2282719000696F5D /* AddIngredientToRecipeViewController.swift in Sources */,
 				277253B8227CD08A00D565C5 /* My_Shopping_Assistant.xcdatamodeld in Sources */,
+				279B868B2287482C00696F5D /* RecipeSelectorTableViewController.swift in Sources */,
 				277253B0227CD08A00D565C5 /* AppDelegate.swift in Sources */,
 				27D0105F22824D0D00440481 /* RecipeViewController.swift in Sources */,
 			);
@@ -336,6 +425,7 @@
 		};
 		277253C2227CD08C00D565C5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FE0DFB17CF5ECA4E56633119 /* Pods-My Shopping Assistant.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -347,6 +437,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.nwarner.My-Shopping-Assistant";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				"SWIFT_OBJC_BRIDGING_HEADER[arch=*]" = "My Shopping Assistant/My Shopping Assistant-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -354,6 +445,7 @@
 		};
 		277253C3227CD08C00D565C5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F930113EE4FA719C06EF2AEA /* Pods-My Shopping Assistant.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -365,6 +457,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.nwarner.My-Shopping-Assistant";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				"SWIFT_OBJC_BRIDGING_HEADER[arch=*]" = "My Shopping Assistant/My Shopping Assistant-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
