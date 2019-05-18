@@ -2,6 +2,7 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14490.99" systemVersion="18E226" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Ingredient" representedClassName="Ingredient" syncable="YES" codeGenerationType="class">
         <attribute name="name" attributeType="String" syncable="YES"/>
+        <relationship name="ingredientForShoppingTrip" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ShoppingIngredient" inverseName="ingredient" inverseEntity="ShoppingIngredient" syncable="YES"/>
         <relationship name="ingredientInRecipes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="RecipeIngredient" inverseName="ingredientName" inverseEntity="RecipeIngredient" syncable="YES"/>
     </entity>
     <entity name="Meal" representedClassName="Meal" syncable="YES" codeGenerationType="class">
@@ -29,13 +30,28 @@
         <attribute name="amount" optional="YES" attributeType="Float" minValueString="0" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="measurement" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="ingredientForRecipe" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Recipe" inverseName="ingredients" inverseEntity="Recipe" syncable="YES"/>
-        <relationship name="ingredientName" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Ingredient" inverseName="ingredientInRecipes" inverseEntity="Ingredient" syncable="YES"/>
+        <relationship name="ingredientName" maxCount="1" deletionRule="Nullify" destinationEntity="Ingredient" inverseName="ingredientInRecipes" inverseEntity="Ingredient" syncable="YES"/>
+    </entity>
+    <entity name="ShoppingIngredient" representedClassName="ShoppingIngredient" syncable="YES" codeGenerationType="class">
+        <attribute name="amount" attributeType="Float" minValueString="0" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="isInCart" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="isOutOfStock" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="measurement" attributeType="String" syncable="YES"/>
+        <relationship name="ingredient" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Ingredient" inverseName="ingredientForShoppingTrip" inverseEntity="Ingredient" syncable="YES"/>
+        <relationship name="shoppingCartItem" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ShoppingTrip" inverseName="ingredients" inverseEntity="ShoppingTrip" syncable="YES"/>
+    </entity>
+    <entity name="ShoppingTrip" representedClassName="ShoppingTrip" syncable="YES" codeGenerationType="class">
+        <attribute name="fromDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="toDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <relationship name="ingredients" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ShoppingIngredient" inverseName="shoppingCartItem" inverseEntity="ShoppingIngredient" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Ingredient" positionX="-2763.125" positionY="4669.26171875" width="128" height="73"/>
+        <element name="Ingredient" positionX="-2763.125" positionY="4669.26171875" width="128" height="88"/>
+        <element name="Meal" positionX="-2734.28125" positionY="4496.859375" width="128" height="133"/>
+        <element name="MealPlan" positionX="-2749.91796875" positionY="4264.61328125" width="128" height="103"/>
         <element name="Recipe" positionX="-2994.2265625" positionY="4467.98828125" width="128" height="118"/>
         <element name="RecipeIngredient" positionX="-2979.42578125" positionY="4640.71484375" width="128" height="103"/>
-        <element name="Meal" positionX="-2734.28125" positionY="4496.859375" width="128" height="133"/>
-        <element name="MealPlan" positionX="-2737.07421875" positionY="4286.0625" width="128" height="103"/>
+        <element name="ShoppingIngredient" positionX="-2762.17578125" positionY="4822.390625" width="128" height="133"/>
+        <element name="ShoppingTrip" positionX="-2993.64453125" positionY="4816.984375" width="128" height="88"/>
     </elements>
 </model>

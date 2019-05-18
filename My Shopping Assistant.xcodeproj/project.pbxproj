@@ -19,6 +19,10 @@
 		279B8686228548DB00696F5D /* MenuPlannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279B8685228548DB00696F5D /* MenuPlannerViewController.swift */; };
 		279B868922860E0A00696F5D /* MealPlannerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279B868822860E0A00696F5D /* MealPlannerTableViewController.swift */; };
 		279B868B2287482C00696F5D /* RecipeSelectorTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279B868A2287482C00696F5D /* RecipeSelectorTableViewController.swift */; };
+		27BE5DEE228CA1AA0030C9B2 /* ShoppingTripCalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BE5DED228CA1AA0030C9B2 /* ShoppingTripCalendarViewController.swift */; };
+		27BE5DF0228F47AE0030C9B2 /* ShoppingListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BE5DEF228F47AE0030C9B2 /* ShoppingListViewController.swift */; };
+		27BE5DF222907A450030C9B2 /* ShoppingListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BE5DF122907A450030C9B2 /* ShoppingListTableViewController.swift */; };
+		27BE5DF422908A900030C9B2 /* SavedShoppingTripTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BE5DF322908A900030C9B2 /* SavedShoppingTripTableViewController.swift */; };
 		27D0101B227CD7F200440481 /* RecipeListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D0101A227CD7F200440481 /* RecipeListTableViewController.swift */; };
 		27D0105F22824D0D00440481 /* RecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D0105E22824D0D00440481 /* RecipeViewController.swift */; };
 		74FEEEA754B37B44B94BC9C7 /* Pods_My_Shopping_Assistant.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDB496BAA2B78F0E8A20999C /* Pods_My_Shopping_Assistant.framework */; };
@@ -40,6 +44,10 @@
 		279B86872285F05000696F5D /* My Shopping Assistant-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "My Shopping Assistant-Bridging-Header.h"; sourceTree = "<group>"; };
 		279B868822860E0A00696F5D /* MealPlannerTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealPlannerTableViewController.swift; sourceTree = "<group>"; };
 		279B868A2287482C00696F5D /* RecipeSelectorTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeSelectorTableViewController.swift; sourceTree = "<group>"; };
+		27BE5DED228CA1AA0030C9B2 /* ShoppingTripCalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingTripCalendarViewController.swift; sourceTree = "<group>"; };
+		27BE5DEF228F47AE0030C9B2 /* ShoppingListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListViewController.swift; sourceTree = "<group>"; };
+		27BE5DF122907A450030C9B2 /* ShoppingListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListTableViewController.swift; sourceTree = "<group>"; };
+		27BE5DF322908A900030C9B2 /* SavedShoppingTripTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedShoppingTripTableViewController.swift; sourceTree = "<group>"; };
 		27D0101A227CD7F200440481 /* RecipeListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListTableViewController.swift; sourceTree = "<group>"; };
 		27D0105E22824D0D00440481 /* RecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewController.swift; sourceTree = "<group>"; };
 		BDB496BAA2B78F0E8A20999C /* Pods_My_Shopping_Assistant.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_My_Shopping_Assistant.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -120,6 +128,10 @@
 				279B8685228548DB00696F5D /* MenuPlannerViewController.swift */,
 				279B868822860E0A00696F5D /* MealPlannerTableViewController.swift */,
 				279B868A2287482C00696F5D /* RecipeSelectorTableViewController.swift */,
+				27BE5DED228CA1AA0030C9B2 /* ShoppingTripCalendarViewController.swift */,
+				27BE5DEF228F47AE0030C9B2 /* ShoppingListViewController.swift */,
+				27BE5DF122907A450030C9B2 /* ShoppingListTableViewController.swift */,
+				27BE5DF322908A900030C9B2 /* SavedShoppingTripTableViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -274,12 +286,16 @@
 				279B86842284DC2D00696F5D /* AddItemTableViewCell.swift in Sources */,
 				279B8686228548DB00696F5D /* MenuPlannerViewController.swift in Sources */,
 				277253B2227CD08A00D565C5 /* ViewController.swift in Sources */,
+				27BE5DF222907A450030C9B2 /* ShoppingListTableViewController.swift in Sources */,
+				27BE5DEE228CA1AA0030C9B2 /* ShoppingTripCalendarViewController.swift in Sources */,
 				27D0101B227CD7F200440481 /* RecipeListTableViewController.swift in Sources */,
 				279B86812284BB3A00696F5D /* RecipeIngredientTableViewCell.swift in Sources */,
 				279B868922860E0A00696F5D /* MealPlannerTableViewController.swift in Sources */,
+				27BE5DF422908A900030C9B2 /* SavedShoppingTripTableViewController.swift in Sources */,
 				279B867D2282719000696F5D /* AddIngredientToRecipeViewController.swift in Sources */,
 				277253B8227CD08A00D565C5 /* My_Shopping_Assistant.xcdatamodeld in Sources */,
 				279B868B2287482C00696F5D /* RecipeSelectorTableViewController.swift in Sources */,
+				27BE5DF0228F47AE0030C9B2 /* ShoppingListViewController.swift in Sources */,
 				277253B0227CD08A00D565C5 /* AppDelegate.swift in Sources */,
 				27D0105F22824D0D00440481 /* RecipeViewController.swift in Sources */,
 			);

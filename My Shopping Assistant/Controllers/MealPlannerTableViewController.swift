@@ -121,11 +121,11 @@ class MealPlannerTableViewController: UITableViewController, RecipeToMeal {
     }
     
     func addRecipe(_ recipe: Recipe) {
-        print(recipe.name)
+        //print(recipe.name)
         if let selectedRow = tableView.indexPathForSelectedRow {
             setRecipe(recipe, mealNumber: selectedRow.section, dishNumber: selectedRow.row)
           
-            print(mealPlan)
+            //print(mealPlan)
             do {
                 try context.save()
             } catch {
