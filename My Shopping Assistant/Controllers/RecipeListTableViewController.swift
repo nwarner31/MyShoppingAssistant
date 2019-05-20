@@ -8,8 +8,9 @@
 
 import UIKit
 import CoreData
+import SwipeCellKit
 
-class RecipeListTableViewController: UITableViewController {
+class RecipeListTableViewController: UITableViewController, SwipeTableViewCellDelegate {
 
     private let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
@@ -29,11 +30,6 @@ class RecipeListTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 1
-    }
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return recipes.count + 1
@@ -41,8 +37,9 @@ class RecipeListTableViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "recipeListCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "recipeListCell", for: indexPath) as! SwipeTableViewCell
 
+        cell.delegate = self
         if indexPath.row < recipes.count {
             cell.textLabel?.text = recipes[indexPath.row].name
         } else {
@@ -59,8 +56,6 @@ class RecipeListTableViewController: UITableViewController {
         } else {
             insertRecipeAlert()
         }
-            
-            
         
     }
     
@@ -133,6 +128,30 @@ class RecipeListTableViewController: UITableViewController {
             tableView.reloadData()
         } catch {
             print("Error getting recipes. \(error)")
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> [SwipeAction]? {
+        if orientation == .right {
+            let deleteRecipeAction = SwipeAction(style: .destructive, title: "Delete Recipe") { (action, indexPath) in
+                do {
+                    self.context.delete(self.recipes[indexPath.row])
+                    try self.context.save()
+                    self.recipes.remove(at: indexPath.row)
+                    self.tableView.reloadData()
+                } catch {
+                    print("Error deleting recipe. \(error)")
+                }
+            }
+            
+            return [deleteRecipeAction]
+        } else {
+            let editRecipeNameAction = SwipeAction(style: .default, title: "Edit Recipe Name") { (action, indexPath) in
+                
+            }
+            editRecipeNameAction.backgroundColor = UIColor.green
+            
+            return [editRecipeNameAction]
         }
     }
 }

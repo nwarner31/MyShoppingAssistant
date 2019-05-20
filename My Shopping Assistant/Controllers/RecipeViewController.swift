@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import SwipeCellKit
 
-class RecipeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, IngredientToRecipe {
+class RecipeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, IngredientToRecipe, SwipeTableViewCellDelegate {
+
+    
     
     private let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
   
@@ -47,6 +50,7 @@ class RecipeViewController: UIViewController, UITableViewDataSource, UITableView
         
         if indexPath.row < recipe?.ingredients?.count ?? 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "recipeIngredientCell", for: indexPath) as! RecipeIngredientTableViewCell
+            cell.delegate = self
             let ingredient = ingredients[indexPath.row]
             cell.ingredientLabel.text = ingredient.ingredientName?.name
             cell.amountLabel.text = "\(ingredient.amount)"
@@ -74,6 +78,32 @@ class RecipeViewController: UIViewController, UITableViewDataSource, UITableView
         if segue.identifier == "addIngredient" {
             let addIngredientVC = segue.destination as! AddIngredientToRecipeViewController
             addIngredientVC.delegate = self
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> [SwipeAction]? {
+        if orientation == .right {
+            let deleteAction = SwipeAction(style: .destructive, title: "Delete") { (swipeAction, indexPath) in
+                do {
+                    self.recipe?.removeFromIngredients(self.ingredients[indexPath.row])
+                    try self.context.save()
+                    self.ingredients.remove(at: indexPath.row)
+                    tableView.reloadData()
+                } catch {
+                    print("Error deleting ingredient from recipe. \(error)")
+                }
+            }
+            return [deleteAction]
+        } else {
+            let editAction = SwipeAction(style: .default, title: "Edit") { (swipeAction, indexPath) in
+                print("edit \(swipeAction): \(indexPath)")
+                let ingredient = self.ingredients[indexPath.row]
+                let changeAmountAlert = UIAlertController(title: "Change Amount", message: "How much of \(ingredient.ingredientName!.name!) do you want?", preferredStyle: .alert)
+                
+                self.present(changeAmountAlert, animated: true, completion: nil)
+            }
+            editAction.backgroundColor = UIColor.green
+            return [editAction]
         }
     }
     
